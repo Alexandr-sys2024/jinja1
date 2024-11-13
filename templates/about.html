@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+    <div class="text-center">
+        <h1>О нашей компании</h1>
+        <p class="lead">{{ about_message }}</p>
+    </div>
+
+    <div class="mt-4">
+        <h3>Наши услуги:</h3>
+        <ul class="list-group">
+            {% for service in services %}
+                <li class="list-group-item">{{ service }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
